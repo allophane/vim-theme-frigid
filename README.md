@@ -3,8 +3,8 @@
 Fork of [Nord Vim][nord-vim]. 
 Based on [Nord][nord] color pallete.
 
-![Frigid Pallete][frigid-colors]
+![Frigid Pallete][frigid-pallete]
 
 [nord-vim]: https://github.com/arcticicestudio/nord-vim
 [nord]: https://github.com/arcticicestudio/nord
-[frigid-pallete]: https://raw.githubusercontent.com/allpohane/vim-theme-frigid/develop/assets/pallete.svg
+[frigid-pallete]: https://raw.githubusercontent.com/allophane/vim-theme-frigid/develop/assets/pallete.svg
