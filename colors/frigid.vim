@@ -48,6 +48,26 @@ let s:yellow_term       = "3"
 let s:green_term        = "2"
 let s:magenta_term      = "5"
 
+"+- Neovim Terminal Colors -+
+if has('nvim')
+  let g:terminal_color_0 = s:polar_dark_gui
+  let g:terminal_color_1 = s:red_gui
+  let g:terminal_color_2 = s:green_gui
+  let g:terminal_color_3 = s:yellow_gui
+  let g:terminal_color_4 = s:blue_light_gui
+  let g:terminal_color_5 = s:magenta_gui
+  let g:terminal_color_6 = s:teal_light_gui
+  let g:terminal_color_7 = s:silver_light_gui
+  let g:terminal_color_8 = s:polar_light_gui
+  let g:terminal_color_9 = s:red_gui
+  let g:terminal_color_10 = s:green_gui
+  let g:terminal_color_11 = s:yellow_gui
+  let g:terminal_color_12 = s:blue_light_gui
+  let g:terminal_color_13 = s:magenta_gui
+  let g:terminal_color_14 = s:teal_gui
+  let g:terminal_color_15 = s:white_gui
+endif
+
 let s:polar_light_gui_brightened = [
   \ s:polar_light_gui,
   \ "#4e586d",
@@ -172,26 +192,6 @@ call s:hi("healthSuccess", s:green_gui, s:polar_dark_gui, s:green_term, s:polar_
 call s:hi("healthWarning", s:yellow_gui, s:polar_dark_gui, s:yellow_term, s:polar_dark_term, "", "")
 call s:hi("TermCursorNC", "", s:polar_dark_gui, "", s:polar_dark_term, "", "")
 
-"+- Neovim Terminal Colors -+
-if has('nvim')
-  let g:terminal_color_0 = s:polar_dark_gui
-  let g:terminal_color_1 = s:red_gui
-  let g:terminal_color_2 = s:green_gui
-  let g:terminal_color_3 = s:yellow_gui
-  let g:terminal_color_4 = s:blue_light_gui
-  let g:terminal_color_5 = s:magenta_gui
-  let g:terminal_color_6 = s:teal_light_gui
-  let g:terminal_color_7 = s:silver_light_gui
-  let g:terminal_color_8 = s:polar_light_gui
-  let g:terminal_color_9 = s:red_gui
-  let g:terminal_color_10 = s:green_gui
-  let g:terminal_color_11 = s:yellow_gui
-  let g:terminal_color_12 = s:blue_light_gui
-  let g:terminal_color_13 = s:magenta_gui
-  let g:terminal_color_14 = s:teal_gui
-  let g:terminal_color_15 = s:white_gui
-endif
-
 "+--- Gutter ---+
 call s:hi("CursorColumn", "", s:polar_dark_gui, "NONE", s:polar_dark_term, "", "")
 if g:frigid_cursor_line_number_background == 0
@@ -278,22 +278,6 @@ hi! link PreCondit PreProc
 "+-----------+
 "+ Languages +
 "+-----------+
-call s:hi("awkCharClass", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("awkPatterns", s:blue_light_gui, "", s:blue_light_term, "", "bold", "")
-hi! link awkArrayElement Identifier
-hi! link awkBoolLogic Keyword
-hi! link awkBrktRegExp SpecialChar
-hi! link awkComma Delimiter
-hi! link awkExpression Keyword
-hi! link awkFieldVars Identifier
-hi! link awkLineSkip Keyword
-hi! link awkOperator Operator
-hi! link awkRegExp SpecialChar
-hi! link awkSearch Keyword
-hi! link awkSemicolon Delimiter
-hi! link awkSpecialCharacter SpecialChar
-hi! link awkSpecialPrintf SpecialChar
-hi! link awkVariables Identifier
 
 call s:hi("cIncluded", s:teal_gui, "", s:teal_term, "", "", "")
 hi! link cOperator Operator
@@ -352,27 +336,6 @@ hi! link goConstants Keyword
 call s:hi("helpBar", s:polar_light_gui, "", s:polar_light_term, "", "", "")
 call s:hi("helpHyperTextJump", s:teal_light_gui, "", s:teal_light_term, "", s:underline, "")
 
-call s:hi("htmlArg", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("htmlLink", s:silver_gui, "", "", "", "NONE", "NONE")
-hi! link htmlBold Bold
-hi! link htmlEndTag htmlTag
-hi! link htmlItalic Italic
-hi! link htmlH1 markdownH1
-hi! link htmlH2 markdownH1
-hi! link htmlH3 markdownH1
-hi! link htmlH4 markdownH1
-hi! link htmlH5 markdownH1
-hi! link htmlH6 markdownH1
-hi! link htmlSpecialChar SpecialChar
-hi! link htmlTag Keyword
-hi! link htmlTagN htmlTag
-
-call s:hi("javaDocTags", s:teal_gui, "", s:teal_term, "", "", "")
-hi! link javaCommentTitle Comment
-hi! link javaScriptBraces Delimiter
-hi! link javaScriptIdentifier Keyword
-hi! link javaScriptNumber Number
-
 call s:hi("jsonKeyword", s:teal_gui, "", s:teal_term, "", "", "")
 
 call s:hi("lessClass", s:teal_gui, "", s:teal_term, "", "", "")
@@ -389,55 +352,12 @@ hi! link lispFunc Function
 
 hi! link luaFunc Function
 
-call s:hi("markdownBlockquote", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("markdownCode", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("markdownCodeDelimiter", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("markdownFootnote", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("markdownId", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("markdownIdDeclaration", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("markdownH1", s:teal_light_gui, "", s:teal_light_term, "", "", "")
-call s:hi("markdownLinkText", s:teal_light_gui, "", s:teal_light_term, "", "", "")
-call s:hi("markdownUrl", s:silver_gui, "", "NONE", "", "NONE", "")
-hi! link markdownBold Bold
-hi! link markdownBoldDelimiter Keyword
-hi! link markdownFootnoteDefinition markdownFootnote
-hi! link markdownH2 markdownH1
-hi! link markdownH3 markdownH1
-hi! link markdownH4 markdownH1
-hi! link markdownH5 markdownH1
-hi! link markdownH6 markdownH1
-hi! link markdownIdDelimiter Keyword
-hi! link markdownItalic Italic
-hi! link markdownItalicDelimiter Keyword
-hi! link markdownLinkDelimiter Keyword
-hi! link markdownLinkTextDelimiter Keyword
-hi! link markdownListMarker Keyword
-hi! link markdownRule Keyword
-hi! link markdownHeadingDelimiter Keyword
-
-call s:hi("perlPackageDecl", s:teal_gui, "", s:teal_term, "", "", "")
-
-call s:hi("phpClasses", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("phpDocTags", s:teal_gui, "", s:teal_term, "", "", "")
-hi! link phpDocCustomTags phpDocTags
-hi! link phpMemberSelector Keyword
-
 call s:hi("podCmdText", s:teal_gui, "", s:teal_term, "", "", "")
 call s:hi("podVerbatimLine", s:silver_gui, "", "NONE", "", "", "")
 hi! link podFormat Keyword
 
 hi! link pythonBuiltin Type
 hi! link pythonEscape SpecialChar
-
-call s:hi("rubyConstant", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("rubySymbol", s:white_gui, "", s:white_term, "", "bold", "")
-hi! link rubyAttribute Identifier
-hi! link rubyBlockParameterList Operator
-hi! link rubyInterpolationDelimiter Keyword
-hi! link rubyKeywordAsMethod Function
-hi! link rubyLocalVariableOrMethod Function
-hi! link rubyPseudoVariable Keyword
-hi! link rubyRegexp SpecialChar
 
 call s:hi("sassClass", s:teal_gui, "", s:teal_term, "", "", "")
 call s:hi("sassId", s:teal_gui, "", s:teal_term, "", s:underline, "")
@@ -489,109 +409,27 @@ hi! link yamlDocumentStart Keyword
 "+ Plugin Support +
 "+----------------+
 "+--- UI ---+
-" ALE
-" > w0rp/ale
-call s:hi("ALEWarningSign", s:yellow_gui, "", s:yellow_term, "", "", "")
-call s:hi("ALEErrorSign" , s:red_gui, "", s:red_term, "", "", "")
-
-" GitGutter
-" > airblade/vim-gitgutter
-call s:hi("GitGutterAdd", s:green_gui, "", s:green_term, "", "", "")
-call s:hi("GitGutterChange", s:yellow_gui, "", s:yellow_term, "", "", "")
-call s:hi("GitGutterChangeDelete", s:red_gui, "", s:red_term, "", "", "")
-call s:hi("GitGutterDelete", s:red_gui, "", s:red_term, "", "", "")
-
-" Signify
-" > mhinz/vim-signify
-call s:hi("SignifySignAdd", s:green_gui, "", s:green_term, "", "", "")
-call s:hi("SignifySignChange", s:yellow_gui, "", s:yellow_term, "", "", "")
-call s:hi("SignifySignChangeDelete", s:red_gui, "", s:red_term, "", "", "")
-call s:hi("SignifySignDelete", s:red_gui, "", s:red_term, "", "", "")
-
-" fugitive.vim
-" > tpope/vim-fugitive
-call s:hi("gitcommitDiscardedFile", s:red_gui, "", s:red_term, "", "", "")
-call s:hi("gitcommitUntrackedFile", s:red_gui, "", s:red_term, "", "", "")
-call s:hi("gitcommitSelectedFile", s:green_gui, "", s:green_term, "", "", "")
-
-" davidhalter/jedi-vim
-call s:hi("jediFunction", s:silver_gui, s:polar_light_gui, "", s:polar_light_term, "", "")
-call s:hi("jediFat", s:teal_light_gui, s:polar_light_gui, s:teal_light_term, s:polar_light_term, s:underline."bold", "")
-
-" NERDTree
-" > scrooloose/nerdtree
-call s:hi("NERDTreeExecFile", s:teal_gui, "", s:teal_term, "", "", "")
-hi! link NERDTreeDirSlash Keyword
-hi! link NERDTreeHelp Comment
-
-" CtrlP
-" > ctrlpvim/ctrlp.vim
-hi! link CtrlPMatch Keyword
-hi! link CtrlPBufferHid Normal
-
-" vim-plug
-" > junegunn/vim-plug
-call s:hi("plugDeleted", s:red_gui, "", "", s:red_term, "", "")
-
-" vim-signature
-" > kshenoy/vim-signature
-call s:hi("SignatureMarkText", s:teal_light_gui, "", s:teal_light_term, "", "", "")
-
-"+--- Languages ---+
-" JavaScript
-" > pangloss/vim-javascript
-call s:hi("jsGlobalNodeObjects", s:teal_light_gui, "", s:teal_light_term, "", s:italic, "")
-hi! link jsBrackets Delimiter
-hi! link jsFuncCall Function
-hi! link jsFuncParens Delimiter
-hi! link jsThis Keyword
-hi! link jsNoise Delimiter
-hi! link jsPrototype Keyword
-hi! link jsRegexpString SpecialChar
-
-" Markdown
-" > plasticboy/vim-markdown
-call s:hi("mkdCode", s:teal_gui, "", s:teal_term, "", "", "")
-call s:hi("mkdFootnote", s:teal_light_gui, "", s:teal_light_term, "", "", "")
-call s:hi("mkdRule", s:blue_gui, "", s:blue_term, "", "", "")
-call s:hi("mkdLineBreak", s:blue_light_gui, "", s:blue_light_term, "", "", "")
-hi! link mkdBold Bold
-hi! link mkdItalic Italic
-hi! link mkdString Keyword
-hi! link mkdCodeStart mkdCode
-hi! link mkdCodeEnd mkdCode
-hi! link mkdBlockquote Comment
-hi! link mkdListItem Keyword
-hi! link mkdListItemLine Normal
-hi! link mkdFootnotes mkdFootnote
-hi! link mkdLink markdownLinkText
-hi! link mkdURL markdownUrl
-hi! link mkdInlineURL mkdURL
-hi! link mkdID Identifier
-hi! link mkdLinkDef mkdLink
-hi! link mkdLinkDefTarget mkdURL
-hi! link mkdLinkTitle mkdInlineURL
-hi! link mkdDelimiter Keyword
-
-" Vimwiki
-" > vimwiki/vimwiki
-if !exists("g:vimwiki_hl_headers") || g:vimwiki_hl_headers == 0
-  for s:i in range(1,6)
-    call s:hi("VimwikiHeader".s:i, s:teal_light_gui, "", s:teal_light_term, "", "bold", "")
-  endfor
-else
-  let s:vimwiki_hcolor_guifg = [s:teal_gui, s:teal_light_gui, s:blue_light_gui, s:blue_gui, s:green_gui, s:magenta_gui]
-  let s:vimwiki_hcolor_ctermfg = [s:teal_term, s:teal_light_term, s:blue_light_term, s:blue_term, s:green_term, s:magenta_term]
-  for s:i in range(1,6)
-    call s:hi("VimwikiHeader".s:i, s:vimwiki_hcolor_guifg[s:i-1] , "", s:vimwiki_hcolor_ctermfg[s:i-1], "", "bold", "")
-  endfor
-endif
-
-call s:hi("VimwikiLink", s:teal_light_gui, "", s:teal_light_term, "", s:underline, "")
-hi! link VimwikiHeaderChar markdownHeadingDelimiter
-hi! link VimwikiHR Keyword
-hi! link VimwikiList markdownListMarker
 
 " YAML
 " > stephpy/vim-yaml
 call s:hi("yamlKey", s:teal_gui, "", s:teal_term, "", "", "")
+
+
+" Frigid
+call s:hi("FrigidBold", "", "", "", "", "bold", "")
+call s:hi("FrigidItalic", "", "", "", "", s:italic, "")
+call s:hi("FrigidUnderline", "", "", "", "", s:underline, "")
+call s:hi("FrigidUnderline", "", "", "", "", s:underline, "")
+
+call s:hi("FrigidNormal", s:silver_gui, s:polar_darker_gui, "NONE", "NONE", "", "")
+call s:hi("FrigidMuted", s:polar_light_gui_brightened[g:frigid_comment_brightness], "", s:polar_light_term, "", "NONE", "")
+call s:hi("FrigidMutedItalic", s:polar_light_gui_brightened[g:frigid_comment_brightness], "", s:polar_light_term, "", s:italicize_comments, "")
+
+call s:hi("FrigidRed", s:red_gui, "", "", s:red_term, "", "")
+call s:hi("FrigidOrange", s:orange_gui, "", "", s:orange_term, "", "")
+call s:hi("FrigidYellow", s:yellow_gui, "", "", s:yellow_term, "", "")
+call s:hi("FrigidTeal", s:teal_gui, "", s:teal_term, "", "", "")
+call s:hi("FrigidGreen", s:green_gui, "", s:green_term, "", "", "")
+call s:hi("FrigidMagents", s:magenta_gui, "", s:magenta_term, "", "", "")
+
+
