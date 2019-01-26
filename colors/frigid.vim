@@ -186,6 +186,7 @@ call s:hi("SpellLocal", s:silver_light_gui, s:polar_darker_gui, s:silver_light_t
 call s:hi("SpellRare", s:white_gui, s:polar_darker_gui, s:white_term, "NONE", "undercurl", s:white_gui)
 call s:hi("Visual", "", s:polar_gui, "", s:polar_dark_term, "", "")
 call s:hi("VisualNOS", "", s:polar_gui, "", s:polar_dark_term, "", "")
+call s:hi("Conceal", "", s:polar_darker_gui, "", s:polar_dark_term, "", "")
 "+- Neovim Support -+
 call s:hi("healthError", s:red_gui, s:polar_dark_gui, s:red_term, s:polar_dark_term, "", "")
 call s:hi("healthSuccess", s:green_gui, s:polar_dark_gui, s:green_term, s:polar_dark_term, "", "")
@@ -431,5 +432,3 @@ call s:hi("FrigidYellow", s:yellow_gui, "", "", s:yellow_term, "", "")
 call s:hi("FrigidTeal", s:teal_gui, "", s:teal_term, "", "", "")
 call s:hi("FrigidGreen", s:green_gui, "", s:green_term, "", "", "")
 call s:hi("FrigidMagents", s:magenta_gui, "", s:magenta_term, "", "", "")
-
-
